@@ -24,3 +24,5 @@ cmdline: coherent_pool=1m
 dtoverlay=rk3568-fiq-debugger-uart2m0
 dtoverlay=rk3568-disable-npu
 
+# Blackdevice overlay
+

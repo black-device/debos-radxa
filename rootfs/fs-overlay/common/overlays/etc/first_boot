@@ -15,3 +15,5 @@ EOF
 
 rm -rf /script /usr/lib/u-boot-`cat /etc/hostname`
 
+# First Boot
+echo "first boot"

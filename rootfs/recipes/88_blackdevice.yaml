@@ -1,0 +1,10 @@
+# Blackdevice recipe FTR 2023
+  - action: run
+    chroot: true
+    script: scripts/blackdevice.sh
+  
+  - action: run
+    description: Copy file
+    chroot: false
+    command: cp ${ROOTDIR}/list.txt ${ARTIFACTDIR}/list.txt
+

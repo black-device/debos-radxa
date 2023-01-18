@@ -14,7 +14,7 @@
 if [ -e /etc/first_boot ]; then
     /bin/sh /etc/first_boot
     rm /etc/first_boot
-    reboot
+    print
 fi
 
 exit 0
