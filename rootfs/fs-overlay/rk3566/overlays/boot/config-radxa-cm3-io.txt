@@ -25,4 +25,12 @@ dtoverlay=rk3568-fiq-debugger-uart2m0
 dtoverlay=rk3568-disable-npu
 
 # Blackdevice overlay
+dtoverlay=rk3568-disable-npu 
+dtoverlay=rk3568-uart2-m0 
+dtoverlay=rk3568-uart5-m0 
+dtoverlay=rk3568-uart6-m1
 
+intfc: uart2=on 
+intfc: uart5=on 
+intfc: uart6=on
+intfc: i2c0=off

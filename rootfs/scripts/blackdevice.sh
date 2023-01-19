@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 PREFIX="FTR"
 MAC=$(ip link |grep ether | tr -d ":" | awk '{print $2}' | tr '[:lower:]' '[:upper:]'| head -n 1 )
 IP=$(ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1')
@@ -29,7 +29,7 @@ if [ -n "$(grep $IP /etc/hosts)" ]
         else
             sudo -- sh -c -e "echo '$IP       $HN $HNDOM' >> /etc/hosts";
 fi
-hostname $HNDOM
-hostnamectl set-hostname $HNDOM
+#hostname $HNDOM
+#hostnamectl set-hostname $HNDOM
 
 
