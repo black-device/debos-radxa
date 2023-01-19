@@ -2,6 +2,11 @@
   - action: run
     chroot: true
     script: scripts/blackdevice.sh
+
+  - action: overlay
+    origin: name
+    source: custom
+    destination: /usr/lib/linux-image-$(uname -r)/rockchip/overlay
   
   #- action: run
   #  description: Copy file
