@@ -6,7 +6,7 @@
 
   - action: overlay
     description: overlay Blackdevice copy dtbo.
-    source: overlays/custom
+    source: custom
     destination: /usr/lib/linux-image-$(uname -r)/rockchip/overlay
   
   #- action: run
