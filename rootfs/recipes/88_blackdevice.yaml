@@ -9,4 +9,7 @@
     source: overlays/custom
     destination: /usr/lib/linux-image-$(uname -r)/rockchip/overlay
 
+  - action: overlay
+    source: overlays/boot
+    destination: /boot
 
