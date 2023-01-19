@@ -1,11 +1,12 @@
 # Blackdevice recipe FTR 2023
   - action: run
+    description: Blackdevice.sh
     chroot: true
     script: scripts/blackdevice.sh
 
   - action: overlay
-    origin: name
-    source: custom
+    description: overlay Blackdevice copy dtbo.
+    source: overlays/custom
     destination: /usr/lib/linux-image-$(uname -r)/rockchip/overlay
   
   #- action: run
