@@ -16,6 +16,7 @@ export VARIANT=server
 export ARCH=arm64
 export FORMAT=gpt
 export IMAGESIZE=2000MB
+export ROCKUNAME=${uname -r}
 
 # Add pre-installed packages for target system
 cat > $BUILD_DIR/${BOARD}-${MODEL}-${DISTRO}-${VARIANT}-${ARCH}-${FORMAT}-packages.list <<EOF
