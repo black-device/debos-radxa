@@ -4,8 +4,28 @@
     chroot: true
     script: scripts/blackdevice.sh
 
-  - action: overlay
-    description: overlay Blackdevice copy dtbo.
-    source: overlays/custom
-    #destination: /usr/lib/linux-image-*/rockchip/overlay
-    destination: /boot/dtbs/*/rockchip/overlay
+  - action: run
+    description: Copy DTB Overlays UART5
+    chroot: true
+    command:  sh -c "cp -av overlays/custom/rk3568-uart5-m0.dtbo /boot/dtbs/*/rockchip/overlays/rk3568-uart5-m0.dtbo"
+  
+  - action: run
+    description: Copy DTB Overlays UART6
+    chroot: true
+    command:  sh -c "cp -av overlays/custom/rk3568-uart6-m1.dtbo /boot/dtbs/*/rockchip/overlays/rk3568-uart6-m1.dtbo"
+
+  #- action: overlay
+  #  description: overlay Blackdevice copy dtbo.
+  #  source: overlays/custom
+  #  #destination: /usr/lib/linux-image-*/rockchip/overlay
+  #  destination: /boot/dtbs/*/rockchip/overlay/
+
+  #- action: overlay
+  #  description: Copy config.txt
+  #  source: overlays/raspberrypi/firmware
+  #  destination: /boot/firmware
+
+  #- action: run
+  #  description: Copy DTB Overlays from u-boot
+  #  chroot: true
+  #  command:  sh -c "cp -av /usr/lib/u-boot/rpi_arm64/bcm2711-vl805.dtbo /boot/firmware/overlays/vl805.dtbo"
