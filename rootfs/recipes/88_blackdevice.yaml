@@ -7,6 +7,6 @@
   - action: overlay
     description: overlay Blackdevice copy dtbo.
     source: overlays/custom
-    destination: /usr/lib/linux-image-${ROCKUNAME}/rockchip/overlay
+    destination: /usr/lib/linux-image-*/rockchip/overlay
 
 
