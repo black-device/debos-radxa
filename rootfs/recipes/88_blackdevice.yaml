@@ -6,14 +6,19 @@
 
   - action: run
     description: Copy DTB Overlays UART5
-    chroot: true
-    command:  sh -c "cp -av custom/rk3568-uart5-m0.dtbo /boot/dtbs/*/rockchip/overlays/rk3568-uart5-m0.dtbo"
+    chroot: false
+    command:  sh -c "cp -av custom/rk3568-uart5-m0.dtbo /usr/lib/*/rockchip/overlay/rk3568-uart5-m0.dtbo"
   
   - action: run
     description: Copy DTB Overlays UART6
-    chroot: true
-    command:  sh -c "cp -av custom/rk3568-uart6-m1.dtbo /boot/dtbs/*/rockchip/overlays/rk3568-uart6-m1.dtbo"
+    chroot: false
+    command:  sh -c "cp -av custom/rk3568-uart6-m1.dtbo /usr/lib/*/rockchip/overlay/rk3568-uart6-m1.dtbo"
 
+  #- action: run
+  #  description: Copy DTBs for the kernel
+  #  chroot: false
+  #  command: sh -c "mkdir -p ${ROOTDIR}/boot/dtbs; cp -rav ${ROOTDIR}/usr/lib/linux-image-*-arm64/broadcom ${ROOTDIR}/boot/dtbs/"
+  
   #- action: overlay
   #  description: overlay Blackdevice copy dtbo.
   #  source: overlays/custom
