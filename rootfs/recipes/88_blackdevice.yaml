@@ -1,36 +1,10 @@
 # Blackdevice recipe FTR 2023
   - action: run
-    description: Blackdevice
+    description: BD - Set Hostname
     chroot: true
-    script: scripts/blackdevice.sh
+    script: scripts/hostname.sh
 
   - action: run
-    description: Copy DTB Overlays UART5
-    chroot: false
-    command:  sh -c "cp -av custom/rk3568-uart5-m0.dtbo /usr/lib/*/rockchip/overlay/rk3568-uart5-m0.dtbo"
-  
-  - action: run
-    description: Copy DTB Overlays UART6
-    chroot: false
-    command:  sh -c "cp -av custom/rk3568-uart6-m1.dtbo /usr/lib/*/rockchip/overlay/rk3568-uart6-m1.dtbo"
-
-  #- action: run
-  #  description: Copy DTBs for the kernel
-  #  chroot: false
-  #  command: sh -c "mkdir -p ${ROOTDIR}/boot/dtbs; cp -rav ${ROOTDIR}/usr/lib/linux-image-*-arm64/broadcom ${ROOTDIR}/boot/dtbs/"
-  
-  #- action: overlay
-  #  description: overlay Blackdevice copy dtbo.
-  #  source: overlays/custom
-  #  #destination: /usr/lib/linux-image-*/rockchip/overlay
-  #  destination: /boot/dtbs/*/rockchip/overlay/
-
-  #- action: overlay
-  #  description: Copy config.txt
-  #  source: overlays/raspberrypi/firmware
-  #  destination: /boot/firmware
-
-  #- action: run
-  #  description: Copy DTB Overlays from u-boot
-  #  chroot: true
-  #  command:  sh -c "cp -av /usr/lib/u-boot/rpi_arm64/bcm2711-vl805.dtbo /boot/firmware/overlays/vl805.dtbo"
+    description: BD - Copy DTB
+    chroot: true
+    script: scripts/cpdtb.sh
